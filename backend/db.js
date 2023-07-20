@@ -1,19 +1,12 @@
-// const mongoose = require("mongoose");
-// const mongoURI = "mongodb://localhost:27017/"
-// const connectToMongoose = () =>{
-//     mongoose.connect(mongoURI, ()=>{
-//         console.log("connected to mongoose")
-//     })
-// }
-// module.exports = connectToMongoose;
+
 const mongoose = require('mongoose');
-// const mongoURI = "mongodb://localhost:27017/"
-const mongoURI = "mongodb://127.0.0.1:27017/"
+
+const mongoURL = "mongodb+srv://asanaullah921:sanaullah129@blogapplication.npd4nix.mongodb.net/?retryWrites=true&w=majority"
 
 const connectToMongo = async () => {
 try {
     mongoose.set('strictQuery', false)
-    mongoose.connect(mongoURI) 
+    mongoose.connect(mongoURL) 
     console.log('Mongo connected')
 }
 catch(error) {
