@@ -59,6 +59,7 @@ async (req, res)=>{
 async (req, res)=>{
     //Checking for valid parameters
     const errors = validationResult(req);
+    //If there are errors, return Bad request and the errors
     if(!errors.isEmpty()){
         return res.status(400).json({ errors: errors.array() });
     }
