@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const mongoURL = "mongodb+srv://asanaullah921:sanaullah129@blogapplication.npd4nix.mongodb.net/?retryWrites=true&w=majority"
+const mongoURL = "mongodb+srv://asanaullah921:sanaullah129@inotes-backend.npd4nix.mongodb.net/inotes-database?retryWrites=true&w=majority"
 
 const connectToMongo = async () => {
 try {
