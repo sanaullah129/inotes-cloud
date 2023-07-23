@@ -10,9 +10,12 @@ const Navbar = () => {
   },[location]);
   return (
     <>
-    <nav className="navbar navbar-expand-lg" style={{backgroundColor: "#48D1CC"}}>
+    <nav className="navbar navbar-expand-lg" style={{backgroundColor: "#7CB9E8"}}>
     <div className="container-fluid">
-      <Link className="navbar-brand" to="/">iNotes</Link>
+      <Link className="navbar-brand" to="/">
+        <img src="/favicon.png" alt="logo" width="30" height="24" className="mx-2" />
+        iNotes
+      </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span className="navbar-toggler-icon"></span>
         </button>

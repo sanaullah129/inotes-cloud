@@ -23,14 +23,50 @@ const NoteState = (props)=> {
               "__v": 0
             },
             {
-              "_id": "64bd5d5a8de13e374bf6cb25",
+              "_id": "64bd5d5a8de13e6374bf26cb25",
               "user": "64bc031672a86a4f41b37758",
               "title": "Sample note 3",
               "description": "Some sample note",
               "tag": "General",
               "date": "2023-07-23T17:03:22.410Z",
               "__v": 0
-            }
+            },
+            {
+              "_id": "64bc26bb2ee6cc55ce11b828d",
+              "user": "64bc031672a86a4f41b37758",
+              "title": "My second note",
+              "description": "Testing the note update feature.",
+              "tag": "General",
+              "date": "2023-07-22T18:58:03.157Z",
+              "__v": 0
+            },
+            {
+              "_id": "64bd5d5a8de163e374bf6cb25",
+              "user": "64bc031672a86a4f41b37758",
+              "title": "Sample note 3",
+              "description": "Some sample note",
+              "tag": "General",
+              "date": "2023-07-23T17:03:22.410Z",
+              "__v": 0
+            },
+            {
+              "_id": "64bc26bb2eecc55ce11b5828d",
+              "user": "64bc031672a86a4f41b37758",
+              "title": "My second note",
+              "description": "Testing the note update feature.",
+              "tag": "General",
+              "date": "2023-07-22T18:58:03.157Z",
+              "__v": 0
+            },
+            {
+              "_id": "64bd5d5a8de133e374bf6cb25",
+              "user": "64bc031672a86a4f41b37758",
+              "title": "Sample note 3",
+              "description": "Some sample note",
+              "tag": "General",
+              "date": "2023-07-23T17:03:22.410Z",
+              "__v": 0
+            },
           ]
     
     const [notes, setNotes] = useState(notesInitial)    
