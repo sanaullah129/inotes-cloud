@@ -4,7 +4,7 @@ import Noteitem from './Noteitem.js';
 import AddNote from './AddNote.js';
 
 
-const Notes = () => {
+const Notes = (props) => {
   const context = useContext(NoteContext);
   const { notes, getNotes, editNote } = context;
   useEffect(() => {
@@ -21,9 +21,9 @@ const Notes = () => {
   }
 
   const handleClick = (e) => {
-    console.log("Updating the note...", note)
     editNote (note.id, note.etitle, note.edescription, note.etag)
     refClose.current.click();
+    props.showAlert("Updated Successfully", "success")
   }
 
   const onChange = (e) => {
@@ -34,7 +34,7 @@ const Notes = () => {
 
   return (
     <>
-      <AddNote />
+      <AddNote showAlert={props.showAlert} />
       {/* Edit Note */}
       <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Launch demo modal
@@ -50,11 +50,11 @@ const Notes = () => {
               <form className="my-3">
                 <div className="mb-3">
                   <label htmlFor="title" className="form-label">Title</label>
-                  <input type="text" className="form-control" id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onChange} />
+                  <input type="text" className="form-control" id="etitle" name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onChange} minLength={3} required />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="description" className="form-label">Description</label>
-                  <input type="text" className="form-control" id="edescription" name="edescription" value={note.edescription} onChange={onChange} />
+                  <input type="text" className="form-control" id="edescription" name="edescription" value={note.edescription} onChange={onChange} minLength={8} required />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="tag" className="form-label">Tag</label>
@@ -64,18 +64,20 @@ const Notes = () => {
             </div>
             <div className="modal-footer">
               <button type="button" ref={refClose} className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
+              <button disabled={note.etitle.length<3 || note.edescription.length<8} onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
             </div>
           </div>
         </div>
       </div>
 
-
-
+      {/* Fetching Notes */}
       <div className="row my-3">
         <h2>You Notes</h2>
+        <div className="container my-2 mx-3">
+          {notes.length === 0 && 'No Notes to display'}
+        </div>
         {notes.map((note) => {
-          return <Noteitem key={note._id} updateNote={updateNote} note={note} />
+          return <Noteitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />
         })}
       </div>
     </>

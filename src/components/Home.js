@@ -3,12 +3,12 @@ import Notes from './Notes.js';
 
 
 
-function Home() {
-  
+function Home(props) {
+  const {showAlert} = props;
   return (
     <>
     
-    <Notes/>
+    <Notes showAlert={showAlert} />
     </>
   )
 }

@@ -28,6 +28,7 @@ async (req, res)=>{
     if(user){
         return res.status(400).json({error: "Email already exists"});
     }
+    //Hashing the password
     const salt = await bcrypt.genSalt(10);
     const secPass = await bcrypt.hash(req.body.password, salt);
     //Creating a new user after validation
