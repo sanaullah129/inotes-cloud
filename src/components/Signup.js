@@ -33,7 +33,8 @@ const Signup = (props) => {
     }
 
     return (
-        <div>
+        <div className="container mt-3">
+            <h3 className="my-3">Create an account to use iNotes-Cloud</h3>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>
